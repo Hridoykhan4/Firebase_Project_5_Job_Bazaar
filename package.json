@@ -10,7 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-spring/web": "^10.0.0",
     "@tailwindcss/vite": "^4.1.6",
+    "aos": "^3.0.0-beta.6",
     "daisyui": "^5.0.35",
     "localforage": "^1.10.0",
     "match-sorter": "^8.0.1",
