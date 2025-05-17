@@ -16,7 +16,8 @@
       "phone": "01750-00 00 00",
       "email": "info@gmail.com",
       "address": "Dhanmondi 32, Sukrabad Dhaka, Bangladesh"
-    }
+    },
+    "category_name": "Engineering Job"
   },
   {
     "id": 2,
@@ -35,7 +36,8 @@
       "phone": "01750-00 00 00",
       "email": "info@gmail.com",
       "address": "Dhanmondi 32, Sukrabad Dhaka, Bangladesh"
-    }
+    },
+    "category_name": "Creative Design"
   },
   {
     "id": 3,
@@ -54,7 +56,8 @@
       "phone": "01750-00 00 00",
       "email": "info@gmail.com",
       "address": "Dhanmondi 32, Sukrabad Dhaka, Bangladesh"
-    }
+    },
+    "category_name": "Engineering Job"
   },
   {
     "id": 4,
@@ -73,7 +76,8 @@
       "phone": "01750-00 00 00",
       "email": "info@gmail.com",
       "address": "Dhanmondi 32, Sukrabad Dhaka, Bangladesh"
-    }
+    },
+    "category_name": "Engineering Job"
   },
   {
     "id": 5,
@@ -92,7 +96,8 @@
       "phone": "01750-00 00 00",
       "email": "info@gmail.com",
       "address": "Dhanmondi 32, Sukrabad Dhaka, Bangladesh"
-    }
+    },
+    "category_name": "Engineering Job"
   },
   {
     "id": 6,
@@ -111,6 +116,7 @@
       "phone": "01750-00 00 00",
       "email": "info@gmail.com",
       "address": "Dhanmondi 32, Sukrabad Dhaka, Bangladesh"
-    }
+    },
+    "category_name": "Creative Design"
   }
 ]

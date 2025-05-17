@@ -8,7 +8,6 @@ const Banner = () => {
       <div className="">
         <div className="flex justify-between items-center flex-col lg:flex-row-reverse gap-10 px-6 md:px-10">
           
-          {/* Right side: Image */}
           <div className="flex-1  w-full min-h-32 text-center lg:text-right">
             <img
               src={BannerImage}
@@ -17,7 +16,6 @@ const Banner = () => {
             />
           </div>
 
-          {/* Left side: Text with animation */}
           <div className="flex-1 space-y-6 text-center lg:text-left">
             <SplitText
               text="One Step Closer To Your Dream Job"
