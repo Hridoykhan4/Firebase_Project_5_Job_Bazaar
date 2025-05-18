@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
         {/* Logo & Social */}
         <div>
-          <h2 className="text-2xl font-bold mb-4">JOBHUNTER</h2>
+          <h2 className="text-2xl font-bold mb-4">Job_Bazaar</h2>
           <p className="text-sm text-gray-400 mb-4">
             There are many variations of passages of Lorem Ipsum, but the majority have suffered alteration in some form.
           </p>
@@ -51,11 +51,11 @@ const Footer = () => {
       </div>
 
       <div className="border-t border-gray-700 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400">
-        <p>@2024 JobHunter. All Rights Reserved</p>
+        <p>@2024 Job_Bazaar. All Rights Reserved</p>
         <div className="text-right mt-4 md:mt-0">
           <p>Activate Windows</p>
           <p>Go to Settings to activate Windows.</p>
-          <p className="text-blue-400 cursor-pointer hover:underline">Powered by JobHunter</p>
+          <p className="text-blue-400 cursor-pointer hover:underline">Powered by Job_Bazaar</p>
         </div>
       </div>
     </footer>

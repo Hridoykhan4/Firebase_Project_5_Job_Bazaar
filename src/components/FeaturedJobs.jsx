@@ -14,7 +14,7 @@ const FeaturedJobs = () => {
   }, []);
 
   return (
-    <div className="py-7 w-11/12 mx-auto">
+    <div className="py-7">
       <div className="text-center pb-5">
         <h2 className="md:text-4xl text-2xl  mb-2">Featured Jobs</h2>
         <p className="">

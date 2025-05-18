@@ -1,6 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
 @import "tailwindcss";
 @plugin "daisyui";
 
-html{
-    scroll-behavior: smooth;
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Space Grotesk", sans-serif;
+  overflow-y: scroll;
+}
+
+a.active {
+  color: skyblue;
+  font-weight: 700;
 }

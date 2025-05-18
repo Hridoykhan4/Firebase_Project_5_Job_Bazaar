@@ -1,13 +1,29 @@
+import { Link } from "react-router-dom";
 import SplitText from "../../ReactBits/SplitText/SplitText";
 import BannerImage from "../assets/job1.jpg";
 import FeaturedJobs from "./FeaturedJobs";
+import useAuthValue from "../hooks/useAuthValue";
 
 const Banner = () => {
+  const { user } = useAuthValue();
+
+  const userStateBtn = (
+    <>
+      <Link to="/auth/login">
+        <button className="relative overflow-hidden px-6 py-2.5 border-2 border-primary text-primary rounded-md font-semibold transition-all duration-300 group hover:text-white">
+          <span className="absolute w-60 h-0 bg-primary rotate-45 top-1/2 left-1/2 transform -translate-x-1/2 group-hover:h-60 group-hover:-translate-y-1/2 transition-all duration-300 ease-in-out"></span>
+          <span className="relative z-10">
+            {user && user?.email ? user.email : "Login"}
+          </span>
+        </button>
+      </Link>
+    </>
+  );
+
   return (
     <>
       <div className="">
-        <div className="flex justify-between items-center flex-col lg:flex-row-reverse gap-10 px-6 md:px-10">
-          
+        <div className="flex justify-between items-center flex-col lg:flex-row-reverse gap-10  pt-4">
           <div className="flex-1  w-full min-h-32 text-center lg:text-right">
             <img
               src={BannerImage}
@@ -29,17 +45,21 @@ const Banner = () => {
             />
 
             <p className="pt-5 text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
-              Explore thousands of job opportunities with all the information you need.
-              It’s your future — come find it. Manage all your job applications from
-              start to finish.
+              Explore thousands of job opportunities with all the information
+              you need. It’s your future — come find it. Manage all your job
+              applications from start to finish.
             </p>
 
-            <div>
+            {user && user?.email ? (
               <button className="relative overflow-hidden px-6 py-2.5 border-2 border-primary text-primary rounded-md font-semibold transition-all duration-300 group hover:text-white">
                 <span className="absolute w-60 h-0 bg-primary rotate-45 top-1/2 left-1/2 transform -translate-x-1/2 group-hover:h-60 group-hover:-translate-y-1/2 transition-all duration-300 ease-in-out"></span>
-                <span className="relative z-10">Get Started</span>
+                <span className="relative z-10">
+                  {user && user?.email ? user.email : "Login"}
+                </span>
               </button>
-            </div>
+            ) : (
+              userStateBtn
+            )}
           </div>
         </div>
       </div>

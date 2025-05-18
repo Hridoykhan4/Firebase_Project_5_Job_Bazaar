@@ -2,6 +2,7 @@ import Aos from "aos";
 import { useEffect } from "react";
 import { CiLocationOn } from "react-icons/ci";
 import { MdAttachMoney } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const JobCard = ({ job }) => {
   const {
@@ -13,6 +14,7 @@ const JobCard = ({ job }) => {
     category_name,
     salary,
     location,
+    id,
   } = job;
 
   const animations = ["fade-up", "zoom-in", "flip-left", "fade-right"];
@@ -39,9 +41,7 @@ const JobCard = ({ job }) => {
         <h2 className="card-title text-xl font-bold text-gray-800">
           {job_title}
         </h2>
-          <div className="badge badge-secondary text-white">
-            {category_name}
-          </div>
+        <div className="badge badge-secondary text-white">{category_name}</div>
         <p className="text-gray-600 font-medium">{company_name}</p>
 
         <div className="flex flex-wrap justify-between items-center text-sm text-gray-700 gap-2">
@@ -65,9 +65,12 @@ const JobCard = ({ job }) => {
         </div>
 
         <div className="mt-5">
-          <button className="btn w-full bg-gradient-to-r from-indigo-500 to-purple-500 text-white hover:from-purple-600 hover:to-indigo-600 font-semibold tracking-wide">
+          <Link
+            to={`/job/${id}`}
+            className="btn w-full bg-gradient-to-r from-indigo-500 to-purple-500 text-white hover:from-purple-600 hover:to-indigo-600 font-semibold tracking-wide"
+          >
             View Details
-          </button>
+          </Link>
         </div>
       </div>
     </div>
