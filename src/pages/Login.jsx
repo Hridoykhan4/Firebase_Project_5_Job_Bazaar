@@ -1,17 +1,21 @@
 import { FaUser, FaLock } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuthValue from "../hooks/useAuthValue";
 const Login = () => {
-  const { logInUser } = useAuthValue();
+  const { logInUser, setUser } = useAuthValue();
 
+  const { state } = useLocation();
+
+  const nav = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    
+
     logInUser(email, password)
       .then((result) => {
-        console.log(result.user);
+        setUser(result.user);
+        nav(state ? state : "/");
       })
       .catch((err) => {
         console.log(err.message);

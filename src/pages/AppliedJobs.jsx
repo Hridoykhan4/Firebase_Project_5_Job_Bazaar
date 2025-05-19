@@ -25,22 +25,6 @@ const AppliedJobs = () => {
     });
   };
 
-  if (!applies.length) {
-    return (
-      <div className="flex flex-col items-center justify-center h-80 text-center text-gray-600 space-y-4">
-        <img
-          src="https://cdn-icons-png.flaticon.com/512/4076/4076549.png"
-          alt="No Applications"
-          className="w-24 h-24 opacity-60"
-        />
-        <h2 className="text-xl font-semibold">No Applications Found</h2>
-        <p className="text-sm text-gray-500">
-          Looks like no apply has formed yet. Please check back later!
-        </p>
-      </div>
-    );
-  }
-
   const handleFilter = (e) => {
     if (e.target.value === "all") {
       setApplies(tempApplies);
@@ -57,6 +41,32 @@ const AppliedJobs = () => {
     }
   };
 
+  if (!applies.length) {
+    return (
+      <>
+        <div className="text-right pt-6">
+          <span className="mr-2">Filter By :</span>{" "}
+          <select onChange={handleFilter} className="select border-1">
+            <option value="all">All</option>
+            <option value="remote">Remote</option>
+            <option value="onsite">Onsite</option>
+          </select>
+        </div>
+        <div className="flex flex-col items-center justify-center h-80 text-center text-gray-600 space-y-4">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/4076/4076549.png"
+            alt="No Applications"
+            className="w-24 h-24 opacity-60"
+          />
+          <h2 className="text-xl font-semibold">No Applications Found</h2>
+          <p className="text-sm text-gray-500">
+            Looks like no apply has formed yet. Please check back later!
+          </p>
+        </div>
+      </>
+    );
+  }
+
   return (
     <>
       <div className="text-right pt-6">
@@ -67,7 +77,6 @@ const AppliedJobs = () => {
           <option value="onsite">Onsite</option>
         </select>
       </div>
-
       <div className="grid grid-cols-1 py-7 md:grid-cols-2 gap-4">
         {applies?.map((apply, i) => (
           <AppliedJob

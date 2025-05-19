@@ -8,6 +8,7 @@ import AuthLayout from "../layouts/AuthLayout";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import AppliedJobs from "../pages/AppliedJobs";
+import PrivateRoute from "./PrivateRoute";
 
 const Router = createBrowserRouter([
   {
@@ -41,7 +42,11 @@ const Router = createBrowserRouter([
       },
       {
         path: "/job/:jobId",
-        element: <JobDetails></JobDetails>,
+        element: (
+          <PrivateRoute>
+            <JobDetails></JobDetails>
+          </PrivateRoute>
+        ),
         loader: async ({ params }) => {
           const res = await fetch(`/jobs.json`);
           const data = await res.json();

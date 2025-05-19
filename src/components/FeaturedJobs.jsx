@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import "aos/dist/aos.css";
 import Categories from "./Categories";
-import { Link, Outlet, useLocation } from "react-router-dom";
+import { Link, Outlet, useLocation, useNavigation } from "react-router-dom";
 const FeaturedJobs = () => {
   const [categories, setCategories] = useState([]);
 
   const { pathname } = useLocation();
-
+  const navigation = useNavigation();
   useEffect(() => {
     fetch("/categories.json")
       .then((res) => res.json())
@@ -31,7 +31,17 @@ const FeaturedJobs = () => {
         </div>
 
         <div className="col-span-1  md:col-span-3">
-          <Outlet></Outlet>
+          {navigation.state === "loading" ? (
+            <div className="relative flex justify-center items-center">
+              <div className="absolute animate-spin rounded-full h-20 w-20 border-t-4 border-b-4 border-purple-500"></div>
+              <img
+                src="https://plus.unsplash.com/premium_photo-1678917827802-721b5f5b4bf0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8am9iJTIwc2VhcmNofGVufDB8fDB8fHww"
+                className="rounded-full h-16 w-16"
+              />
+            </div>
+          ) : (
+            <Outlet></Outlet>
+          )}
         </div>
       </div>
 

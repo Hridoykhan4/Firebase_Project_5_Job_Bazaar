@@ -53,6 +53,12 @@ const Navbar = () => {
             )}
           </Link>
 
+          {user && user.email && (
+            <div className="hidden btn ml-2 lg:flex">
+              <button onClick={handleLogOut}>Log Out</button>
+            </div>
+          )}
+
           {/* Modal */}
           {showModal && (
             <dialog id="my_modal_5" className="modal modal-open modal-middle">
@@ -65,8 +71,8 @@ const Navbar = () => {
                       onClick={() => {
                         logOutUser()
                           .then(() => {
-                            nav('/')
-                            alert("Success");
+                            setShowModal(false);
+                            nav("/");
                           })
                           .catch((err) => {
                             alert(err);
